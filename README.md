@@ -1,0 +1,2217 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="سينما درايف ألترا ماكس - أكبر منصة لمشاهدة وتحميل الأفلام العالمية والحصرية بجودة عالية. أكثر من 1000 فيلم عربي وأجنبي، تجربة سينمائية فائقة مع أحدث الإصدارات 2025-2026. مشاهدة وتحميل مباشر من جوجل درايف.">
+    <meta name="keywords" content="أفلام, مشاهدة أفلام, تحميل أفلام, سينما, درايف, أفلام عربية, أفلام أجنبية, أفلام 2025, أفلام 2026, ماعز 2026, باتمان, سبايدرمان, أنميشن, أفلام كرتون, زولوتوبيا 2 مدبلج, سبونج بوب, الهولندي الطائر">
+    <meta name="author" content="Cinema Drive Ultra Max">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta property="og:title" content="سينما درايف ألترا ماكس | أعظم تجربة سينمائية">
+    <meta property="og:description" content="أكبر منصة لمشاهدة وتحميل الأفلام العالمية والحصرية بجودة عالية. تجربة سينمائية فائقة مع أحدث الإصدارات.">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630">
+    <meta property="og:url" content="https://cinema-drive-ultra-max.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>سينما درايف ألترا ماكس | أعظم تجربة سينمائية | مشاهدة وتحميل أفلام 2026</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================ */
+        /* ULTRA MAX CINEMA - COMPLETE STYLES V2.0 */
+        /* ============================================ */
+
+        :root {
+            --primary: #e50914;
+            --primary-dark: #b20710;
+            --primary-light: #ff6b6b;
+            --secondary: #ffd700;
+            --success: #4caf50;
+            --warning: #ff9800;
+            --info: #2196f3;
+            --danger: #f44336;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.2);
+            --shadow-lg: 0 8px 32px rgba(0,0,0,0.3);
+            --shadow-xl: 0 16px 64px rgba(0,0,0,0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', 'Tajawal', sans-serif;
+            overflow-x: hidden;
+            transition: var(--transition);
+            min-height: 100vh;
+        }
+
+        /* Dark Mode (Default) */
+        body.dark-mode {
+            --bg-primary: #050510;
+            --bg-secondary: #0a0a2a;
+            --bg-card: rgba(20,20,40,0.85);
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255,255,255,0.7);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        /* Light Mode - محسن بشكل كبير */
+        body.light-mode {
+            --bg-primary: linear-gradient(135deg, #fef9e6 0%, #fff5e0 50%, #fff0e0 100%);
+            --bg-secondary: #ffffff;
+            --bg-card: rgba(255,255,245,0.95);
+            --text-primary: #1a1a2e;
+            --text-secondary: #4a4a5a;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        body.light-mode .hero-bg-3d {
+            background: radial-gradient(circle at 30% 50%, #fff5e6 0%, #ffe6d5 100%);
+        }
+
+        body.light-mode .movie-card {
+            background: white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            border: 1px solid rgba(229,9,20,0.15);
+        }
+
+        body.light-mode .movie-card:hover {
+            box-shadow: 0 15px 35px rgba(229,9,20,0.2);
+            border-color: var(--primary);
+        }
+
+        body.light-mode .cat-btn {
+            background: white;
+            border-color: #e0e0e0;
+            color: #333;
+        }
+
+        body.light-mode .cat-btn:hover,
+        body.light-mode .cat-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        body.light-mode .search-box {
+            background: white;
+            border-color: #e0e0e0;
+        }
+
+        body.light-mode .search-box input {
+            color: #333;
+        }
+
+        body.light-mode .modal-content {
+            background: white;
+        }
+
+        body.light-mode .detail-badge {
+            background: rgba(229,9,20,0.1);
+            color: #333;
+        }
+
+        .hero-bg-3d {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            transition: var(--transition);
+        }
+
+        .canvas-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .particle-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: floatParticle linear infinite;
+        }
+
+        @keyframes floatParticle {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.8; }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        header {
+            background: rgba(5, 5, 20, 0.85);
+            backdrop-filter: blur(20px);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(229,9,20,0.3);
+            transition: var(--transition);
+        }
+
+        body.light-mode header {
+            background: rgba(255, 245, 235, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom-color: rgba(229,9,20,0.2);
+            box-shadow: var(--shadow-sm);
+        }
+
+        header.scrolled {
+            padding: 0.7rem 2rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .header-content {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 900;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            transform: scale(1.02);
+        }
+
+        .logo i {
+            color: var(--primary);
+            font-size: 1.8rem;
+            animation: logoPulse 2s infinite;
+        }
+
+        @keyframes logoPulse {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(229,9,20,0.5)); }
+            50% { transform: scale(1.05); filter: drop-shadow(0 0 20px rgba(229,9,20,0.8)); }
+        }
+
+        .logo span {
+            background: linear-gradient(135deg, #fff, var(--primary), var(--primary-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 200% 200%;
+            animation: gradientShift 3s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .search-wrapper {
+            position: relative;
+            flex: 1;
+            max-width: 400px;
+        }
+
+        .search-box {
+            display: flex;
+            background: rgba(255,255,255,0.08);
+            border-radius: 50px;
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        body.light-mode .search-box {
+            background: white;
+            border-color: #e0e0e0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .search-box:focus-within {
+            background: rgba(255,255,255,0.12);
+            border-color: var(--primary);
+            box-shadow: 0 0 25px rgba(229,9,20,0.3);
+        }
+
+        .search-box input {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            background: transparent;
+            color: var(--text-primary);
+            width: 100%;
+            outline: none;
+            font-size: 0.9rem;
+        }
+
+        .search-box input::placeholder {
+            color: rgba(255,255,255,0.5);
+        }
+
+        body.light-mode .search-box input::placeholder {
+            color: rgba(0,0,0,0.4);
+        }
+
+        .search-box button {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            background: var(--primary);
+            color: white;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .search-box button:hover {
+            background: var(--primary-dark);
+        }
+
+        .nav-tabs {
+            display: flex;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.05);
+            padding: 0.3rem;
+            border-radius: 50px;
+            flex-wrap: wrap;
+        }
+
+        body.light-mode .nav-tabs {
+            background: rgba(0,0,0,0.05);
+        }
+
+        .nav-tab {
+            padding: 0.5rem 1.2rem;
+            border: none;
+            background: transparent;
+            color: var(--text-primary);
+            cursor: pointer;
+            border-radius: 40px;
+            transition: var(--transition);
+            font-size: 0.85rem;
+        }
+
+        .nav-tab:hover, .nav-tab.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .icon-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        body.light-mode .icon-btn {
+            background: rgba(0,0,0,0.05);
+            border-color: rgba(0,0,0,0.1);
+        }
+
+        .icon-btn:hover {
+            background: var(--primary);
+            transform: scale(1.05);
+        }
+
+        .visitor-counter {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 50px;
+            padding: 0.3rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            direction: ltr;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .visitor-counter:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-md);
+        }
+
+        .visitor-counter i {
+            font-size: 1rem;
+            color: white;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .visitor-count {
+            font-weight: bold;
+            font-size: 1rem;
+            color: white;
+            font-family: monospace;
+            letter-spacing: 1px;
+        }
+
+        .visitor-label {
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.9);
+            font-weight: normal;
+        }
+
+        .daily-counter {
+            background: rgba(255,255,255,0.2);
+            border-radius: 50px;
+            padding: 0.3rem 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+        }
+
+        .user-menu {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .user-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            cursor: pointer;
+            border: 2px solid rgba(255,255,255,0.3);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .user-avatar:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(229,9,20,0.5);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 60px;
+            left: 0;
+            background: rgba(10,10,30,0.98);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 1rem;
+            min-width: 340px;
+            display: none;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: var(--shadow-xl);
+            z-index: 100;
+        }
+
+        body.light-mode .dropdown-menu {
+            background: rgba(255,255,245,0.98);
+            border-color: rgba(0,0,0,0.1);
+        }
+
+        .user-menu:hover .dropdown-menu {
+            display: block;
+            animation: fadeInUp 0.3s;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(-15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .profile-card {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(229,9,20,0.1);
+            border-radius: 15px;
+            margin-bottom: 1rem;
+        }
+
+        .profile-avatar-clickable {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            background-size: cover;
+            background-position: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid var(--primary);
+        }
+
+        .profile-avatar-clickable:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(229,9,20,0.5);
+        }
+
+        .profile-info {
+            flex: 1;
+        }
+
+        .profile-name {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 0.3rem;
+            color: var(--text-primary);
+        }
+
+        .profile-level {
+            font-size: 0.8rem;
+            color: var(--secondary);
+            margin-bottom: 0.3rem;
+        }
+
+        .xp-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .xp-fill {
+            height: 100%;
+            background: var(--primary);
+            width: 0%;
+            transition: width 0.5s;
+        }
+
+        .stats-numbers {
+            display: flex;
+            justify-content: space-around;
+            padding: 0.5rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 0.3rem;
+        }
+
+        .stat-value {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .stat-label {
+            font-size: 0.7rem;
+            opacity: 0.7;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.7rem 1rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: var(--transition);
+            border-radius: 12px;
+            font-size: 0.9rem;
+        }
+
+        .dropdown-menu a i {
+            margin-left: 10px;
+            width: 24px;
+            color: var(--primary);
+        }
+
+        .dropdown-menu a:hover {
+            background: rgba(229,9,20,0.15);
+            padding-right: 1.3rem;
+        }
+
+        .categories-wrapper {
+            margin-top: 100px;
+            padding: 2rem;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .categories {
+            display: inline-flex;
+            gap: 0.8rem;
+        }
+
+        .cat-btn {
+            padding: 0.7rem 1.8rem;
+            border: none;
+            border-radius: 50px;
+            background: rgba(255,255,255,0.05);
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+            border: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cat-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(229,9,20,0.4);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .cat-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .cat-btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cat-btn:hover, .cat-btn.active {
+            background: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(229,9,20,0.4);
+            color: white;
+        }
+
+        .featured-section {
+            margin: 1.5rem 2rem 2rem;
+        }
+
+        .featured-slider {
+            position: relative;
+            border-radius: 30px;
+            overflow: hidden;
+            height: 550px;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .slider-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
+        }
+
+        .slider-slide {
+            min-width: 100%;
+            position: relative;
+        }
+
+        .slider-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slider-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(0deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.5) 50%, transparent 100%);
+            padding: 3rem;
+        }
+
+        .slider-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            color: white;
+        }
+
+        .slider-info {
+            display: flex;
+            gap: 1rem;
+            margin: 0.5rem 0;
+            color: var(--secondary);
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.6);
+            color: white;
+            border: none;
+            padding: 1rem;
+            cursor: pointer;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            transition: var(--transition);
+            z-index: 10;
+        }
+
+        .slider-btn:hover {
+            background: var(--primary);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .slider-prev { right: 20px; }
+        .slider-next { left: 20px; }
+
+        .slider-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.5rem;
+            z-index: 10;
+        }
+
+        .slider-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+        }
+
+        .slider-dot.active {
+            background: var(--primary);
+            width: 25px;
+            border-radius: 10px;
+        }
+
+        .movies-section {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .section-title i {
+            color: var(--primary);
+        }
+
+        .view-all {
+            color: var(--primary);
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            background: rgba(229,9,20,0.1);
+        }
+
+        .view-all:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .movies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 2rem;
+        }
+
+        .movie-card {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: var(--transition);
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .movie-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-xl);
+            border-color: rgba(229,9,20,0.5);
+        }
+
+        .movie-poster {
+            position: relative;
+            width: 100%;
+            padding-top: 150%;
+            overflow: hidden;
+        }
+
+        .movie-poster img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .movie-card:hover .movie-poster img {
+            transform: scale(1.1);
+        }
+
+        .movie-rating {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.8);
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            color: var(--secondary);
+            z-index: 2;
+        }
+
+        .movie-year {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.7);
+            padding: 0.2rem 0.6rem;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            z-index: 2;
+        }
+
+        .movie-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.65rem;
+            font-weight: bold;
+            z-index: 2;
+        }
+
+        .movie-actions {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(0deg, rgba(0,0,0,0.9), transparent);
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+            z-index: 3;
+        }
+
+        .movie-card:hover .movie-actions {
+            transform: translateY(0);
+        }
+
+        .movie-action-btn {
+            background: rgba(229,9,20,0.9);
+            border: none;
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.7rem;
+            transition: var(--transition);
+        }
+
+        .movie-action-btn:hover {
+            background: var(--primary);
+            transform: scale(1.05);
+        }
+
+        .movie-info {
+            padding: 0.8rem;
+        }
+
+        .movie-title {
+            font-size: 0.95rem;
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: var(--text-primary);
+        }
+
+        .movie-category {
+            font-size: 0.75rem;
+            color: var(--primary);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.97);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(20px);
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #1a1a2e, #0f0f1f);
+            border-radius: 30px;
+            max-width: 1000px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalEnter 0.4s;
+            border: 1px solid rgba(229,9,20,0.3);
+        }
+
+        body.light-mode .modal-content {
+            background: linear-gradient(135deg, #fff5e6, #ffe6d5);
+        }
+
+        @keyframes modalEnter {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: var(--transition);
+            z-index: 10;
+        }
+
+        .close-modal:hover {
+            background: var(--primary);
+            transform: rotate(90deg);
+        }
+
+        .modal-poster-container {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .modal-poster {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-info {
+            padding: 2rem;
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .modal-details {
+            display: flex;
+            gap: 0.8rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .detail-badge {
+            background: rgba(229,9,20,0.15);
+            padding: 0.3rem 1rem;
+            border-radius: 25px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(229,9,20,0.3);
+            color: var(--text-primary);
+        }
+
+        .modal-plot {
+            line-height: 1.7;
+            margin: 1rem 0;
+            color: var(--text-secondary);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .watch-btn, .download-btn, .trailer-btn, .fav-btn {
+            flex: 1;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .watch-btn {
+            background: var(--primary);
+            color: white;
+        }
+
+        .watch-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .download-btn {
+            background: rgba(255,255,255,0.08);
+            color: var(--text-primary);
+            border: 1px solid rgba(229,9,20,0.5);
+        }
+
+        .trailer-btn {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: var(--text-primary);
+        }
+
+        .fav-btn {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: var(--text-primary);
+        }
+
+        .fav-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .profile-edit-modal { max-width: 500px; }
+
+        .avatar-preview {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            background-size: cover;
+            background-position: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 3px solid var(--primary);
+        }
+
+        .avatar-preview:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 20px rgba(229,9,20,0.5);
+        }
+
+        .avatar-input { display: none; }
+
+        .profile-input {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 10px;
+            padding: 0.8rem;
+            color: var(--text-primary);
+            width: 100%;
+        }
+
+        body.light-mode .profile-input {
+            background: #f5f5f5;
+            border-color: #e0e0e0;
+            color: #333;
+        }
+
+        .settings-modal { max-width: 600px; }
+
+        .settings-section {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .settings-section h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .setting-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 0;
+            color: var(--text-primary);
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider-switch {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: 0.4s;
+            border-radius: 34px;
+        }
+
+        .slider-switch:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: 0.4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider-switch {
+            background-color: var(--primary);
+        }
+
+        input:checked + .slider-switch:before {
+            transform: translateX(26px);
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 1rem;
+        }
+
+        .achievement-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 1rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .achievement-card.locked {
+            opacity: 0.5;
+            filter: grayscale(0.5);
+        }
+
+        .achievement-card i {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .toast-notification {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 20px;
+            z-index: 4000;
+            display: none;
+            animation: slideInRight 0.3s;
+            font-size: 0.9rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 3rem;
+            grid-column: 1 / -1;
+            color: var(--text-secondary);
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 1000;
+        }
+
+        .scroll-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            margin-top: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .header-content { flex-direction: column; }
+            .nav-tabs { order: 3; width: 100%; justify-content: center; flex-wrap: wrap; }
+            .categories-wrapper { margin-top: 180px; }
+            .featured-slider { height: 350px; }
+            .slider-title { font-size: 1.3rem; }
+            .slider-overlay { padding: 1.5rem; }
+            .movies-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1rem; }
+            .modal-poster-container { height: 250px; }
+            .button-group { flex-direction: column; }
+            .action-buttons { justify-content: center; }
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #1a1a2a; }
+        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
+        body.light-mode ::-webkit-scrollbar-track { background: #e0e0e0; }
+    </style>
+</head>
+<body class="dark-mode">
+
+    <div class="hero-bg-3d"></div>
+    <div class="particle-container" id="particleContainer"></div>
+    <canvas class="canvas-bg" id="canvasBg"></canvas>
+
+    <header id="header">
+        <div class="header-content">
+            <div class="logo" id="logoRefresh">
+                <i class="fas fa-film"></i>
+                <span>سينما درايف ألترا ماكس</span>
+            </div>
+            <div class="search-wrapper">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="ابحث عن فيلم...">
+                    <button id="searchBtn"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+            <div class="nav-tabs">
+                <button class="nav-tab active" data-page="home"><i class="fas fa-home"></i> الرئيسية</button>
+                <button class="nav-tab" data-page="favorites"><i class="fas fa-heart"></i> مفضلتي</button>
+                <button class="nav-tab" data-page="watchlist"><i class="fas fa-clock"></i> للمشاهدة</button>
+                <button class="nav-tab" data-page="watched"><i class="fas fa-check-circle"></i> تم مشاهدتها</button>
+            </div>
+            <div class="action-buttons">
+                <div class="visitor-counter" id="visitorCounter">
+                    <i class="fas fa-eye"></i>
+                    <span class="visitor-count" id="visitorCount">0</span>
+                    <span class="visitor-label">إجمالي الزوار</span>
+                </div>
+                <div class="visitor-counter" style="background: linear-gradient(135deg, #4caf50, #2e7d32);">
+                    <i class="fas fa-calendar-day"></i>
+                    <span class="visitor-count" id="todayVisitorCount">0</span>
+                    <span class="visitor-label">اليوم</span>
+                </div>
+                <div class="icon-btn" id="themeToggle"><i class="fas fa-moon"></i></div>
+                <div class="icon-btn" id="fullscreenBtn"><i class="fas fa-expand"></i></div>
+            </div>
+            <div class="user-menu">
+                <div class="user-avatar" id="userAvatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="dropdown-menu">
+                    <div class="profile-card">
+                        <div class="profile-avatar-clickable" id="profileAvatarClick">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="profile-info">
+                            <div class="profile-name" id="dropdownName">زائر</div>
+                            <div class="profile-level" id="dropdownLevel">المستوى 1</div>
+                            <div class="xp-bar">
+                                <div class="xp-fill" id="dropdownXpFill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stats-numbers">
+                        <div class="stat-item"><div class="stat-value" id="statFav">0</div><div class="stat-label">مفضلة</div></div>
+                        <div class="stat-item"><div class="stat-value" id="statWatchlist">0</div><div class="stat-label">للمشاهدة</div></div>
+                        <div class="stat-item"><div class="stat-value" id="statWatched">0</div><div class="stat-label">تم مشاهدتها</div></div>
+                        <div class="stat-item"><div class="stat-value" id="statPoints">0</div><div class="stat-label">نقاط</div></div>
+                    </div>
+                    <a href="#" id="profileBtn"><i class="fas fa-user-circle"></i> تعديل الملف الشخصي</a>
+                    <a href="#" id="achievementsBtn"><i class="fas fa-trophy"></i> الإنجازات</a>
+                    <a href="#" id="settingsBtn"><i class="fas fa-cog"></i> الإعدادات</a>
+                    <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a>
+                    <a href="#" id="loginDropdownBtn"><i class="fas fa-sign-in-alt"></i> تسجيل الدخول</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="featured-section">
+        <div class="featured-slider">
+            <button class="slider-btn slider-prev" id="sliderPrev"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-btn slider-next" id="sliderNext"><i class="fas fa-chevron-right"></i></button>
+            <div class="slider-container">
+                <div class="slider-track" id="sliderTrack"></div>
+            </div>
+            <div class="slider-dots" id="sliderDots"></div>
+        </div>
+    </div>
+
+    <div class="categories-wrapper">
+        <div class="categories" id="categories">
+            <button class="cat-btn active" data-cat="all"><span>🎬 الكل</span></button>
+            <button class="cat-btn" data-cat="action"><span>⚡ أكشن</span></button>
+            <button class="cat-btn" data-cat="superhero"><span>🦸 أبطال خارقين</span></button>
+            <button class="cat-btn" data-cat="animation"><span>🎨 أنميشن</span></button>
+            <button class="cat-btn" data-cat="comedy"><span>😄 كوميدي</span></button>
+            <button class="cat-btn" data-cat="adventure"><span>🏔️ مغامرات</span></button>
+        </div>
+    </div>
+
+    <section class="movies-section">
+        <div class="section-header">
+            <h2 class="section-title" id="sectionTitle"><i class="fas fa-fire"></i> أحدث الإصدارات</h2>
+            <div class="view-all" id="viewAllBtn">عرض الكل <i class="fas fa-arrow-left"></i></div>
+        </div>
+        <div class="movies-grid" id="moviesGrid"></div>
+    </section>
+
+    <footer>
+        <p><i class="fas fa-film"></i> سينما درايف ألترا ماكس | أفضل الأفلام العالمية | تجربة سينمائية فائقة</p>
+        <p style="margin-top: 0.5rem;">© 2025 جميع الحقوق محفوظة | تصميم وتطوير احترافي | <span id="footerVisitorCount"></span> زائر فريد | <span id="footerTodayCount"></span> زائر اليوم</p>
+    </footer>
+
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    <div class="toast-notification" id="toast"></div>
+
+    <!-- Movie Modal -->
+    <div id="movieModal" class="modal">
+        <div class="modal-content">
+            <div class="close-modal">&times;</div>
+            <div class="modal-poster-container">
+                <img id="modalPoster" class="modal-poster" src="" alt="Poster">
+            </div>
+            <div class="modal-info">
+                <h2 id="modalTitle" class="modal-title"></h2>
+                <div class="modal-details" id="modalDetails"></div>
+                <p id="modalPlot" class="modal-plot"></p>
+                <div class="button-group">
+                    <button class="watch-btn" id="watchBtn"><i class="fas fa-play"></i> مشاهدة</button>
+                    <button class="download-btn" id="downloadBtn"><i class="fas fa-download"></i> تحميل</button>
+                    <button class="trailer-btn" id="trailerBtn"><i class="fab fa-youtube"></i> برومو</button>
+                    <button class="fav-btn" id="favModalBtn"><i class="fas fa-heart"></i> مفضلة</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Download Modal -->
+    <div id="downloadModal" class="modal">
+        <div class="modal-content" style="max-width: 450px;">
+            <div class="close-modal" id="closeDownloadModalBtn">&times;</div>
+            <div style="padding: 2rem; text-align: center;">
+                <i class="fas fa-download" style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                <h3>رابط تحميل الفيلم</h3>
+                <p id="downloadMovieTitle" style="margin: 1rem 0;"></p>
+                <div style="background: rgba(0,0,0,0.5); padding: 1rem; border-radius: 15px; margin: 1rem 0;">
+                    <code id="downloadLinkUrl" style="word-break: break-all;"></code>
+                </div>
+                <button class="copy-link-btn" id="copyLinkBtn" style="background: var(--primary); padding: 0.8rem 1.5rem; border: none; border-radius: 30px; color: white; cursor: pointer;"><i class="fas fa-copy"></i> نسخ الرابط</button>
+                <a href="#" id="directDownloadLink" class="direct-download-btn" style="display: inline-block; background: var(--success); padding: 0.8rem 1.5rem; border-radius: 30px; color: white; text-decoration: none; margin-top: 0.5rem;"><i class="fas fa-download"></i> تحميل مباشر</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Auth Modal -->
+    <div id="authModal" class="modal">
+        <div class="modal-content" style="max-width: 450px;">
+            <div class="close-modal" id="closeAuthModal">&times;</div>
+            <div style="padding: 2rem;">
+                <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                    <button id="loginTabBtn" class="cat-btn active" style="flex: 1;">تسجيل الدخول</button>
+                    <button id="registerTabBtn" class="cat-btn" style="flex: 1;">إنشاء حساب</button>
+                </div>
+                <div id="loginForm">
+                    <input type="text" id="loginUsername" placeholder="اسم المستخدم" class="profile-input" style="width: 100%; margin-bottom: 1rem;">
+                    <input type="password" id="loginPassword" placeholder="كلمة المرور" class="profile-input" style="width: 100%; margin-bottom: 1rem;">
+                    <button id="doLoginBtn" style="width: 100%; padding: 0.8rem; background: var(--primary); border: none; border-radius: 10px; color: white; cursor: pointer;">تسجيل الدخول</button>
+                </div>
+                <div id="registerForm" style="display: none;">
+                    <input type="text" id="regUsername" placeholder="اسم المستخدم" class="profile-input" style="width: 100%; margin-bottom: 1rem;">
+                    <input type="email" id="regEmail" placeholder="البريد الإلكتروني" class="profile-input" style="width: 100%; margin-bottom: 1rem;">
+                    <input type="password" id="regPassword" placeholder="كلمة المرور" class="profile-input" style="width: 100%; margin-bottom: 1rem;">
+                    <input type="password" id="regConfirmPassword" placeholder="تأكيد كلمة المرور" class="profile-input" style="width: 100%; margin-bottom: 1rem;">
+                    <button id="doRegisterBtn" style="width: 100%; padding: 0.8rem; background: var(--primary); border: none; border-radius: 10px; color: white; cursor: pointer;">إنشاء حساب</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Edit Modal -->
+    <div id="profileEditModal" class="modal">
+        <div class="modal-content profile-edit-modal">
+            <div class="close-modal" id="closeProfileEditModal">&times;</div>
+            <div style="padding: 2rem;">
+                <h2 style="text-align: center; margin-bottom: 1.5rem;"><i class="fas fa-user-edit"></i> تعديل الملف الشخصي</h2>
+                <div class="avatar-preview" id="avatarPreview" onclick="document.getElementById('avatarFileInput').click()">
+                    <i class="fas fa-camera"></i>
+                </div>
+                <input type="file" id="avatarFileInput" class="avatar-input" accept="image/*">
+                <input type="text" id="editDisplayName" placeholder="الاسم المعروض" class="profile-input" style="width: 100%; margin-bottom: 1rem;">
+                <textarea id="editBio" placeholder="نبذة عني" rows="3" class="profile-input" style="width: 100%; margin-bottom: 1rem; resize: vertical;"></textarea>
+                <button id="saveProfileEditBtn" style="width: 100%; padding: 0.8rem; background: var(--primary); border: none; border-radius: 10px; color: white; cursor: pointer;">حفظ التغييرات</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settingsModal" class="modal">
+        <div class="modal-content settings-modal">
+            <div class="close-modal" id="closeSettingsModal">&times;</div>
+            <div style="padding: 2rem;">
+                <h2 style="text-align: center; margin-bottom: 1.5rem;"><i class="fas fa-cog"></i> الإعدادات</h2>
+                <div class="settings-section">
+                    <h3><i class="fas fa-palette"></i> المظهر</h3>
+                    <div class="setting-item">
+                        <label>الوضع الليلي</label>
+                        <label class="switch">
+                            <input type="checkbox" id="darkModeToggle" checked>
+                            <span class="slider-switch"></span>
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label>تأثيرات حركية</label>
+                        <label class="switch">
+                            <input type="checkbox" id="animationsToggle" checked>
+                            <span class="slider-switch"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="settings-section">
+                    <h3><i class="fas fa-bell"></i> الإشعارات</h3>
+                    <div class="setting-item">
+                        <label>إشعارات الأفلام الجديدة</label>
+                        <label class="switch">
+                            <input type="checkbox" id="newMoviesNotify" checked>
+                            <span class="slider-switch"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="settings-section">
+                    <h3><i class="fas fa-database"></i> البيانات</h3>
+                    <div class="setting-item">
+                        <button id="exportDataBtn" style="background: var(--info); border: none; padding: 0.5rem 1rem; border-radius: 10px; color: white; cursor: pointer;"><i class="fas fa-download"></i> تصدير البيانات</button>
+                        <button id="clearDataBtn" style="background: var(--danger); border: none; padding: 0.5rem 1rem; border-radius: 10px; color: white; cursor: pointer;"><i class="fas fa-trash"></i> مسح البيانات</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Achievements Modal -->
+    <div id="achievementsModal" class="modal">
+        <div class="modal-content" style="max-width: 650px;">
+            <div class="close-modal" id="closeAchievementsModal">&times;</div>
+            <div style="padding: 2rem;">
+                <h2 style="text-align: center; margin-bottom: 1.5rem;"><i class="fas fa-trophy"></i> الإنجازات</h2>
+                <div class="achievements-grid" id="achievementsGrid"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ================================================
+        // ULTRA MAX CINEMA - VERSION 2.0 (مع إضافة سبونج بوب الهولندي الطائر 2025)
+        // ================================================
+
+        // ==================== عداد الزوار المتطور ====================
+        class AdvancedVisitorCounter {
+            constructor() {
+                this.visitorKey = 'cinema_ultra_visitors_v2';
+                this.dailyKey = 'cinema_daily_visitors';
+                this.sessionKey = 'cinema_visitor_session_v2';
+                this.visitorsList = [];
+                this.dailyVisitors = [];
+                this.currentVisitorId = null;
+                this.init();
+            }
+
+            generateFingerprint() {
+                const components = [
+                    navigator.userAgent,
+                    navigator.language,
+                    screen.width + 'x' + screen.height,
+                    new Date().getTimezoneOffset(),
+                    navigator.hardwareConcurrency || 'unknown',
+                    navigator.platform,
+                    !!window.chrome,
+                    !!navigator.userAgent.match(/Mobile/i)
+                ];
+                let hash = 0;
+                const str = components.join('|');
+                for (let i = 0; i < str.length; i++) {
+                    const char = str.charCodeAt(i);
+                    hash = ((hash << 5) - hash) + char;
+                    hash = hash & hash;
+                }
+                return Math.abs(hash).toString(16) + Date.now().toString(36);
+            }
+
+            getSimulatedIP() {
+                let storedIP = localStorage.getItem('cinema_simulated_ip_v2');
+                if (!storedIP) {
+                    const octets = [];
+                    for (let i = 0; i < 4; i++) {
+                        octets.push(Math.floor(Math.random() * 255));
+                    }
+                    storedIP = octets.join('.');
+                    localStorage.setItem('cinema_simulated_ip_v2', storedIP);
+                }
+                return storedIP;
+            }
+
+            getTodayDate() {
+                return new Date().toDateString();
+            }
+
+            updateVisitor() {
+                const fingerprint = this.generateFingerprint();
+                const simulatedIP = this.getSimulatedIP();
+                const today = this.getTodayDate();
+                
+                const savedVisitors = localStorage.getItem(this.visitorKey);
+                if (savedVisitors) {
+                    this.visitorsList = JSON.parse(savedVisitors);
+                }
+                
+                const savedDaily = localStorage.getItem(this.dailyKey);
+                if (savedDaily) {
+                    this.dailyVisitors = JSON.parse(savedDaily);
+                } else {
+                    this.dailyVisitors = [];
+                }
+                
+                const existingVisitor = this.visitorsList.find(v =>
+                    v.fingerprint === fingerprint ||
+                    (v.ip === simulatedIP && v.userAgent === navigator.userAgent)
+                );
+                
+                if (!existingVisitor) {
+                    const newVisitor = {
+                        id: Date.now(),
+                        fingerprint: fingerprint,
+                        ip: simulatedIP,
+                        userAgent: navigator.userAgent,
+                        firstVisit: new Date().toISOString(),
+                        lastVisit: new Date().toISOString(),
+                        visitCount: 1,
+                        language: navigator.language,
+                        screen: `${screen.width}x${screen.height}`
+                    };
+                    this.visitorsList.push(newVisitor);
+                    localStorage.setItem(this.visitorKey, JSON.stringify(this.visitorsList));
+                }
+                
+                const dailyExists = this.dailyVisitors.find(v => v.fingerprint === fingerprint && v.date === today);
+                if (!dailyExists) {
+                    this.dailyVisitors.push({
+                        fingerprint: fingerprint,
+                        date: today,
+                        timestamp: new Date().toISOString()
+                    });
+                    localStorage.setItem(this.dailyKey, JSON.stringify(this.dailyVisitors));
+                }
+                
+                this.cleanOldDailyData();
+                this.updateDisplay();
+            }
+            
+            cleanOldDailyData() {
+                const today = this.getTodayDate();
+                this.dailyVisitors = this.dailyVisitors.filter(v => v.date === today);
+                localStorage.setItem(this.dailyKey, JSON.stringify(this.dailyVisitors));
+            }
+            
+            getTotalUniqueVisitors() {
+                const saved = localStorage.getItem(this.visitorKey);
+                if (saved) {
+                    this.visitorsList = JSON.parse(saved);
+                    return this.visitorsList.length;
+                }
+                return 0;
+            }
+            
+            getTodayVisitors() {
+                const today = this.getTodayDate();
+                return this.dailyVisitors.filter(v => v.date === today).length;
+            }
+            
+            updateDisplay() {
+                const total = this.getTotalUniqueVisitors();
+                const today = this.getTodayVisitors();
+                
+                const visitorElement = document.getElementById('visitorCount');
+                const todayElement = document.getElementById('todayVisitorCount');
+                const footerVisitor = document.getElementById('footerVisitorCount');
+                const footerToday = document.getElementById('footerTodayCount');
+                
+                if (visitorElement) visitorElement.textContent = total.toLocaleString('ar-EG');
+                if (todayElement) todayElement.textContent = today.toLocaleString('ar-EG');
+                if (footerVisitor) footerVisitor.textContent = total.toLocaleString('ar-EG') + ' زائر';
+                if (footerToday) footerToday.textContent = today.toLocaleString('ar-EG') + ' اليوم';
+            }
+            
+            init() {
+                this.updateVisitor();
+                console.log(`%c👥 إحصائيات الزوار المتقدمة:`, 'color: #e50914; font-size: 14px;');
+                console.log(`%c   📊 إجمالي الزوار الفريدين: ${this.getTotalUniqueVisitors()}`, 'color: #ffd700;');
+                console.log(`%c   📅 زوار اليوم: ${this.getTodayVisitors()}`, 'color: #4caf50;');
+            }
+        }
+        
+        const visitorCounter = new AdvancedVisitorCounter();
+        setInterval(() => visitorCounter.updateDisplay(), 3600000);
+        
+        // ============ قائمة الأفلام (تم إضافة سبونج بوب الهولندي الطائر 2025) ============
+        const movies = [
+            {
+                id: 1, title: "سبونج بوب: الهولندي الطائر 2025", titleEn: "SpongeBob: The Flying Dutchman 2025", year: 2025, rating: 9.4,
+                category: "animation", categoryAr: "أنميشن",
+                poster: "https://rricoid-assets.obs.ap-southeast-4.myhuaweicloud.com/berita/Denpasar/o/1766129140956-the_spongebob_movie__search_for_squarepants_by_dbozartist_dh84eez-fullview/e2n06i60ikxs14u.jpeg",
+                plot: "فيلم مغامرة جديد ومثير! يقرر سبونج بوب وبسيط مواجهة القرصان الهولندي الطائر في رحلة مليئة بالضحك والمفاجآت. نسخة مدبلجة عالية الجودة بالعربية. استعد لأعظم مغامرة في قاع المحيط!",
+                watchLink: "https://drive.google.com/file/d/1SpongeBobFlying2025/view?usp=drive_link",
+                downloadLink: "https://drive.google.com/uc?export=download&id=1SpongeBobFlying2025",
+                trailer: "https://www.youtube.com/watch?v=4KxXo6P2tZc",
+                featured: true, views: 2800000, duration: 95
+            },
+            {
+                id: 2, title: "ماعز 2026", titleEn: "Mooz 2026", year: 2026, rating: 9.2,
+                category: "animation", categoryAr: "أنميشن",
+                poster: "https://upload.wikimedia.org/wikipedia/ar/b/be/%D9%85%D9%84%D8%B5%D9%82_%D9%81%D9%84%D9%85_%D8%A7%D9%84%D9%85%D8%A7%D8%B9%D8%B2.jpg",
+                plot: "فيلم أنميشن ثلاثي الأبعاد مذهل عن مغامرات معز في عالم الخيال، حيث يواجه تحديات كبيرة ويكتشف قوته الحقيقية. قصة ملهمة عن الصداقة والشجاعة.",
+                watchLink: "https://drive.google.com/file/d/1-d88BVHIkn1ghJdnX02GwSRp4IB8MZXH/view?usp=sharing",
+                downloadLink: "https://drive.google.com/file/d/1-d88BVHIkn1ghJdnX02GwSRp4IB8MZXH/view?usp=sharing",
+                trailer: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                featured: true, views: 1250000, duration: 110
+            },
+            {
+                id: 3, title: "زولوتوبيا 2 (مدبلج)", titleEn: "Zootopia 2 (Dubbed)", year: 2026, rating: 9.5,
+                category: "animation", categoryAr: "أنميشن",
+                poster: "https://ksa.grandcinemasme.com/Media/resized-0a55f5e1-f2e0-432f-a78a-426b668020ce.jpg",
+                plot: "المغامرة المنتظرة بشدة! تعود جودي هوبز ونيك وايلد في قصة جديدة ومثيرة عن الصداقة والعدالة في مدينة زولوتوبيا. النسخة المدبلجة بالعربية الفصحى مع نخبة من نجوم الدبلجة.",
+                watchLink: "https://drive.google.com/file/d/1kHH9npqaXWVzkDvr86DiBSUszqTPSgfY/view?usp=sharing",
+                downloadLink: "https://drive.google.com/file/d/1kHH9npqaXWVzkDvr86DiBSUszqTPSgfY/view?usp=sharing",
+                trailer: "https://www.youtube.com/watch?v=g9tX7DnZxIY",
+                featured: true, views: 3500000, duration: 118
+            },
+            {
+                id: 4, title: "سبايدرمان: لا طريق للوطن", titleEn: "Spider-Man: No Way Home", year: 2021, rating: 8.7,
+                category: "superhero", categoryAr: "أبطال خارقين",
+                poster: "https://image.tmdb.org/t/p/w500/iRZFQvL2iFQyF6jqXKQpZ8q8QkL.jpg",
+                plot: "بعد أن يتم كشف هوية بيتر باركر، يطلب المساعدة من دكتور سترينج، لكن الأمور تسوء عندما ينفتح العوالم المتعددة.",
+                watchLink: "https://drive.google.com/file/d/example-spiderman/view",
+                downloadLink: "https://drive.google.com/uc?export=download&id=example-spiderman",
+                trailer: "https://www.youtube.com/watch?v=JfVOs4VSpmA",
+                featured: true, views: 8500000, duration: 148
+            },
+            {
+                id: 5, title: "باتمان: الفارس الأسود", titleEn: "The Dark Knight", year: 2008, rating: 9.0,
+                category: "superhero", categoryAr: "أبطال خارقين",
+                poster: "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+                plot: "يخوض باتمان معركة شرسة ضد الجوكر، المجرم العبقري الذي يهدد مدينة جوثام بالفوضى.",
+                watchLink: "https://drive.google.com/file/d/example-darkknight/view",
+                downloadLink: "https://drive.google.com/uc?export=download&id=example-darkknight",
+                trailer: "https://www.youtube.com/watch?v=EXeTwQWrcwY",
+                featured: true, views: 12500000, duration: 152
+            },
+            {
+                id: 6, title: "الملك الأسد", titleEn: "The Lion King", year: 1994, rating: 8.5,
+                category: "animation", categoryAr: "أنميشن",
+                poster: "https://image.tmdb.org/t/p/w500/sKCr78MXSLixwmZ8DyJLrpMsd15.jpg",
+                plot: "قصة سيمبا الشبل الذي يفقد والده موفاسا على يد عمه الشرير سكار، ثم يعود لاستعادة عرشه.",
+                watchLink: "https://drive.google.com/file/d/example-lionking/view",
+                downloadLink: "https://drive.google.com/uc?export=download&id=example-lionking",
+                trailer: "https://www.youtube.com/watch?v=4sj1MT05lAA",
+                featured: false, views: 18000000, duration: 88
+            },
+            {
+                id: 7, title: "باتمان: بداية جديدة", year: 2005, rating: 8.2,
+                category: "superhero", categoryAr: "أبطال خارقين",
+                poster: "https://picsum.photos/id/104/300/450",
+                plot: "قصة نشأة باتمان وكيف بدأ رحلته لمحاربة الجريمة في جوثام.",
+                watchLink: "#", downloadLink: "#", trailer: "#",
+                featured: false, views: 6800000, duration: 140
+            },
+            {
+                id: 8, title: "فروزن 2", year: 2019, rating: 7.8,
+                category: "animation", categoryAr: "أنميشن",
+                poster: "https://picsum.photos/id/110/300/450",
+                plot: "تكملة مغامرات إلسا وآنا في الغابة المسحورة.",
+                watchLink: "#", downloadLink: "#", trailer: "#",
+                featured: false, views: 7200000, duration: 103
+            },
+            {
+                id: 9, title: "موانا", year: 2016, rating: 7.6,
+                category: "adventure", categoryAr: "مغامرات",
+                poster: "https://picsum.photos/id/117/300/450",
+                plot: "رحلة موانا البحرية لإنقاذ جزيرتها.",
+                watchLink: "#", downloadLink: "#", trailer: "#",
+                featured: false, views: 3900000, duration: 107
+            }
+        ];
+        
+        // ============ النظام الأساسي ============
+        let currentUser = JSON.parse(localStorage.getItem('cinema_currentUser')) || null;
+        let users = JSON.parse(localStorage.getItem('cinema_users')) || [];
+        
+        let userData = {
+            favorites: [], watchlist: [], watched: [], points: 0, level: 1, xp: 0,
+            bio: "", displayName: "", avatar: null, achievements: [],
+            settings: { darkMode: true, animations: true, newMoviesNotify: true }
+        };
+        
+        function loadUserData() {
+            if (currentUser) {
+                const savedData = localStorage.getItem(`cinema_userData_${currentUser.username}`);
+                if (savedData) Object.assign(userData, JSON.parse(savedData));
+                if (!userData.displayName) userData.displayName = currentUser.username;
+            } else {
+                const guestData = localStorage.getItem('cinema_guestData');
+                if (guestData) Object.assign(userData, JSON.parse(guestData));
+            }
+            updateUI();
+            applyAvatar();
+        }
+        
+        function saveUserData() {
+            if (currentUser) localStorage.setItem(`cinema_userData_${currentUser.username}`, JSON.stringify(userData));
+            else localStorage.setItem('cinema_guestData', JSON.stringify(userData));
+        }
+        
+        function applyAvatar() {
+            const elements = ['#userAvatar', '#profileAvatarClick', '#avatarPreview'];
+            elements.forEach(sel => {
+                const el = document.querySelector(sel);
+                if (el) {
+                    if (userData.avatar) {
+                        el.style.backgroundImage = `url(${userData.avatar})`;
+                        el.style.backgroundSize = 'cover';
+                        el.style.backgroundPosition = 'center';
+                        if (sel === '#avatarPreview') el.innerHTML = '';
+                        else el.innerHTML = '';
+                    } else {
+                        el.style.backgroundImage = '';
+                        if (sel === '#avatarPreview') el.innerHTML = '<i class="fas fa-camera"></i>';
+                        else if (sel === '#profileAvatarClick') el.innerHTML = '<i class="fas fa-user"></i>';
+                        else el.innerHTML = '<i class="fas fa-user"></i>';
+                    }
+                }
+            });
+        }
+        
+        function addXP(amount) {
+            userData.xp += amount;
+            userData.points += amount;
+            const xpNeeded = userData.level * 100;
+            if (userData.xp >= xpNeeded) {
+                userData.xp -= xpNeeded;
+                userData.level++;
+                showToast(`🎉 تهانينا! لقد وصلت إلى المستوى ${userData.level}!`);
+            }
+            saveUserData();
+            updateUI();
+        }
+        
+        const achievementsList = [
+            { id: "first_movie", name: "أول مشاهدة", desc: "شاهد أول فيلم", icon: "fa-play", condition: () => userData.watched.length >= 1 },
+            { id: "movie_master", name: "سيد الأفلام", desc: "شاهد 5 أفلام", icon: "fa-film", condition: () => userData.watched.length >= 5 },
+            { id: "collector", name: "جامع", desc: "أضف 5 أفلام للمفضلة", icon: "fa-heart", condition: () => userData.favorites.length >= 5 }
+        ];
+        
+        function checkAchievements() {
+            achievementsList.forEach(ach => {
+                if (!userData.achievements.includes(ach.id) && ach.condition()) {
+                    userData.achievements.push(ach.id);
+                    showToast(`🏆 إنجاز جديد: ${ach.name}!`);
+                    addXP(50);
+                }
+            });
+            saveUserData();
+        }
+        
+        function register(username, email, password) {
+            if (users.find(u => u.username === username)) {
+                showToast("اسم المستخدم موجود بالفعل", "error");
+                return false;
+            }
+            users.push({ username, email, password, createdAt: new Date().toISOString() });
+            localStorage.setItem('cinema_users', JSON.stringify(users));
+            currentUser = { username, email };
+            localStorage.setItem('cinema_currentUser', JSON.stringify(currentUser));
+            userData = { favorites: [], watchlist: [], watched: [], points: 0, level: 1, xp: 0, bio: "", displayName: username, avatar: null, achievements: [], settings: { darkMode: true, animations: true, newMoviesNotify: true } };
+            saveUserData();
+            showToast(`🎉 مرحباً ${username}!`);
+            updateUI();
+            applyAvatar();
+            return true;
+        }
+        
+        function login(username, password) {
+            const user = users.find(u => u.username === username && u.password === password);
+            if (!user) { showToast("بيانات غير صحيحة", "error"); return false; }
+            currentUser = { username: user.username, email: user.email };
+            localStorage.setItem('cinema_currentUser', JSON.stringify(currentUser));
+            loadUserData();
+            showToast(`👋 مرحباً ${username}!`);
+            updateUI();
+            applyAvatar();
+            return true;
+        }
+        
+        function logout() {
+            currentUser = null;
+            localStorage.removeItem('cinema_currentUser');
+            userData = { favorites: [], watchlist: [], watched: [], points: 0, level: 1, xp: 0, bio: "", displayName: "", avatar: null, achievements: [], settings: { darkMode: true, animations: true, newMoviesNotify: true } };
+            saveUserData();
+            updateUI();
+            applyAvatar();
+            showToast("تم تسجيل الخروج");
+        }
+        
+        function setTheme(isDark) {
+            if (isDark) {
+                document.body.classList.remove('light-mode');
+                document.body.classList.add('dark-mode');
+                document.getElementById('themeToggle').innerHTML = '<i class="fas fa-moon"></i>';
+            } else {
+                document.body.classList.remove('dark-mode');
+                document.body.classList.add('light-mode');
+                document.getElementById('themeToggle').innerHTML = '<i class="fas fa-sun"></i>';
+            }
+            if (document.getElementById('darkModeToggle')) document.getElementById('darkModeToggle').checked = isDark;
+            userData.settings.darkMode = isDark;
+            saveUserData();
+        }
+        
+        function toggleTheme() { setTheme(!document.body.classList.contains('dark-mode')); }
+        
+        function showToast(message, type = "success") {
+            const toast = document.getElementById("toast");
+            toast.textContent = message;
+            toast.style.display = "block";
+            toast.style.background = type === "error" ? "linear-gradient(135deg, #ff9800, #ff5722)" : "linear-gradient(135deg, #e50914, #ff6b6b)";
+            setTimeout(() => toast.style.display = "none", 3000);
+        }
+        
+        function isFavorite(id) { return userData.favorites.includes(id); }
+        function isInWatchlist(id) { return userData.watchlist.includes(id); }
+        function isWatched(id) { return userData.watched.includes(id); }
+        
+        function toggleFavorite(id) {
+            if (isFavorite(id)) userData.favorites = userData.favorites.filter(i => i !== id);
+            else { userData.favorites.push(id); addXP(5); }
+            saveUserData();
+            renderMovies();
+            updateUI();
+            checkAchievements();
+        }
+        
+        function toggleWatchlist(id) {
+            if (isInWatchlist(id)) userData.watchlist = userData.watchlist.filter(i => i !== id);
+            else { userData.watchlist.push(id); addXP(3); }
+            saveUserData();
+            renderMovies();
+            updateUI();
+        }
+        
+        function markAsWatched(id) {
+            if (!isWatched(id)) { userData.watched.push(id); addXP(10); checkAchievements(); }
+            saveUserData();
+            renderMovies();
+            updateUI();
+        }
+        
+        function updateUI() {
+            document.getElementById("dropdownName").textContent = userData.displayName || (currentUser?.username || "زائر");
+            document.getElementById("dropdownLevel").textContent = `المستوى ${userData.level}`;
+            const xpPercent = (userData.xp / (userData.level * 100)) * 100;
+            document.getElementById("dropdownXpFill").style.width = `${xpPercent}%`;
+            document.getElementById("statFav").textContent = userData.favorites.length;
+            document.getElementById("statWatchlist").textContent = userData.watchlist.length;
+            document.getElementById("statWatched").textContent = userData.watched.length;
+            document.getElementById("statPoints").textContent = userData.points;
+            
+            const logoutBtn = document.getElementById("logoutBtn");
+            const loginBtn = document.getElementById("loginDropdownBtn");
+            if (currentUser) { logoutBtn.style.display = "block"; loginBtn.style.display = "none"; }
+            else { logoutBtn.style.display = "none"; loginBtn.style.display = "block"; }
+        }
+        
+        // ============ عرض الأفلام ============
+        let currentMovies = [...movies];
+        let currentCategory = "all";
+        let currentSearch = "";
+        let currentPage = "home";
+        let currentMovie = null;
+        let currentSlide = 0;
+        let featuredMovies = movies.filter(m => m.featured);
+        
+        const moviesGrid = document.getElementById("moviesGrid");
+        const searchInput = document.getElementById("searchInput");
+        const searchBtn = document.getElementById("searchBtn");
+        const modal = document.getElementById("movieModal");
+        const sliderTrack = document.getElementById("sliderTrack");
+        const sliderPrev = document.getElementById("sliderPrev");
+        const sliderNext = document.getElementById("sliderNext");
+        const sliderDots = document.getElementById("sliderDots");
+        
+        function createSlider() {
+            if (!featuredMovies.length) return;
+            sliderTrack.innerHTML = featuredMovies.map(movie => `
+                <div class="slider-slide">
+                    <img src="${movie.poster}" alt="${movie.title}" onerror="this.src='https://picsum.photos/1200/600?grayscale'">
+                    <div class="slider-overlay">
+                        <h2 class="slider-title">${movie.title}</h2>
+                        <div class="slider-info">
+                            <span>⭐ ${movie.rating}</span>
+                            <span>📅 ${movie.year}</span>
+                            <span>🎬 ${movie.categoryAr}</span>
+                        </div>
+                        <button class="watch-btn" onclick="openModalById(${movie.id})" style="margin-top: 10px; padding: 8px 20px;">مشاهدة الآن</button>
+                    </div>
+                </div>
+            `).join("");
+            sliderDots.innerHTML = featuredMovies.map((_, i) => `<div class="slider-dot ${i === currentSlide ? 'active' : ''}" data-slide="${i}"></div>`).join("");
+            document.querySelectorAll('.slider-dot').forEach(dot => dot.addEventListener('click', () => { currentSlide = parseInt(dot.dataset.slide); updateSlider(); updateSliderDots(); }));
+        }
+        
+        function updateSlider() { sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`; }
+        function updateSliderDots() { document.querySelectorAll('.slider-dot').forEach((dot, i) => i === currentSlide ? dot.classList.add('active') : dot.classList.remove('active')); }
+        function nextSlide() { currentSlide = (currentSlide + 1) % featuredMovies.length; updateSlider(); updateSliderDots(); }
+        function prevSlide() { currentSlide = (currentSlide - 1 + featuredMovies.length) % featuredMovies.length; updateSlider(); updateSliderDots(); }
+        
+        function filterMovies() {
+            let filtered = [...movies];
+            if (currentPage === "favorites") filtered = filtered.filter(m => userData.favorites.includes(m.id));
+            else if (currentPage === "watchlist") filtered = filtered.filter(m => userData.watchlist.includes(m.id));
+            else if (currentPage === "watched") filtered = filtered.filter(m => userData.watched.includes(m.id));
+            else {
+                if (currentCategory !== "all") filtered = filtered.filter(m => m.category === currentCategory);
+                if (currentSearch.trim()) filtered = filtered.filter(m => m.title.includes(currentSearch) || (m.titleEn && m.titleEn.includes(currentSearch)));
+            }
+            currentMovies = filtered;
+            renderMovies();
+        }
+        
+        function renderMovies() {
+            if (currentMovies.length === 0) { moviesGrid.innerHTML = `<div class="no-results">😢 لا توجد أفلام مطابقة</div>`; return; }
+            moviesGrid.innerHTML = currentMovies.map(movie => `
+                <div class="movie-card" data-id="${movie.id}">
+                    <div class="movie-poster">
+                        <img src="${movie.poster}" alt="${movie.title}" onerror="this.src='https://picsum.photos/300/450?grayscale'">
+                        <div class="movie-rating">⭐ ${movie.rating}</div>
+                        <div class="movie-year">📅 ${movie.year}</div>
+                        ${movie.rating >= 8.5 ? '<div class="movie-badge">🔥 رائع</div>' : movie.rating >= 8 ? '<div class="movie-badge">👍 ممتاز</div>' : ''}
+                    </div>
+                    <div class="movie-actions">
+                        <button class="movie-action-btn" onclick="event.stopPropagation(); openModalById(${movie.id})"><i class="fas fa-play"></i></button>
+                        <button class="movie-action-btn" onclick="event.stopPropagation(); toggleFavorite(${movie.id})"><i class="fas fa-heart ${isFavorite(movie.id) ? 'fas' : 'far'}"></i></button>
+                        <button class="movie-action-btn" onclick="event.stopPropagation(); toggleWatchlist(${movie.id})"><i class="fas fa-clock ${isInWatchlist(movie.id) ? 'fas' : 'far'}"></i></button>
+                        <button class="movie-action-btn" onclick="event.stopPropagation(); markAsWatched(${movie.id})"><i class="fas fa-check-circle ${isWatched(movie.id) ? 'fas' : 'far'}"></i></button>
+                    </div>
+                    <div class="movie-info">
+                        <div class="movie-title">${movie.title}</div>
+                        <div class="movie-category">${movie.categoryAr}</div>
+                    </div>
+                </div>
+            `).join("");
+            document.querySelectorAll(".movie-card").forEach(card => card.addEventListener("click", () => { const movie = movies.find(m => m.id === parseInt(card.dataset.id)); if (movie) openModal(movie); }));
+        }
+        
+        function openModal(movie) {
+            currentMovie = movie;
+            document.getElementById("modalPoster").src = movie.poster;
+            document.getElementById("modalTitle").textContent = movie.title;
+            document.getElementById("modalPlot").textContent = movie.plot;
+            document.getElementById("modalDetails").innerHTML = `<span class="detail-badge">📅 ${movie.year}</span><span class="detail-badge">⭐ ${movie.rating}</span><span class="detail-badge">🎬 ${movie.categoryAr}</span><span class="detail-badge">⏱️ ${movie.duration} دقيقة</span>`;
+            const favBtn = document.getElementById("favModalBtn");
+            favBtn.innerHTML = `<i class="fas fa-heart"></i> ${isFavorite(movie.id) ? 'إزالة من المفضلة' : 'إضافة للمفضلة'}`;
+            if (isFavorite(movie.id)) favBtn.classList.add('active');
+            else favBtn.classList.remove('active');
+            modal.style.display = "flex";
+            document.body.style.overflow = "hidden";
+        }
+        
+        window.openModalById = function(id) { const movie = movies.find(m => m.id === id); if (movie) openModal(movie); };
+        window.toggleFavorite = toggleFavorite;
+        window.toggleWatchlist = toggleWatchlist;
+        window.markAsWatched = markAsWatched;
+        
+        function closeModalFunc() { modal.style.display = "none"; document.body.style.overflow = "auto"; }
+        
+        function watchMovie() {
+            if (currentMovie) {
+                markAsWatched(currentMovie.id);
+                window.open(currentMovie.watchLink, "_blank");
+                showToast(`🎬 جاري تشغيل: ${currentMovie.title}`);
+            }
+        }
+        
+        function showDownloadModal() {
+            if (currentMovie) {
+                document.getElementById("downloadMovieTitle").textContent = currentMovie.title;
+                document.getElementById("downloadLinkUrl").textContent = currentMovie.downloadLink;
+                document.getElementById("directDownloadLink").href = currentMovie.downloadLink;
+                document.getElementById("downloadModal").style.display = "flex";
+            }
+        }
+        
+        function watchTrailer() { if (currentMovie) { window.open(currentMovie.trailer, "_blank"); showToast(`🎥 برومو: ${currentMovie.title}`); } }
+        function handleFavModal() { if (currentMovie) { toggleFavorite(currentMovie.id); const btn = document.getElementById("favModalBtn"); btn.innerHTML = `<i class="fas fa-heart"></i> ${isFavorite(currentMovie.id) ? 'إزالة من المفضلة' : 'إضافة للمفضلة'}`; if (isFavorite(currentMovie.id)) btn.classList.add('active'); else btn.classList.remove('active'); } }
+        function copyLink() { navigator.clipboard.writeText(document.getElementById("downloadLinkUrl").textContent); showToast("📋 تم نسخ الرابط"); }
+        
+        function openProfileEdit() {
+            document.getElementById("editDisplayName").value = userData.displayName || "";
+            document.getElementById("editBio").value = userData.bio || "";
+            document.getElementById("profileEditModal").style.display = "flex";
+        }
+        
+        function saveProfileEdit() {
+            userData.displayName = document.getElementById("editDisplayName").value;
+            userData.bio = document.getElementById("editBio").value;
+            saveUserData();
+            updateUI();
+            showToast("✅ تم حفظ الملف الشخصي");
+            document.getElementById("profileEditModal").style.display = "none";
+        }
+        
+        document.getElementById("avatarFileInput")?.addEventListener("change", function(e) {
+            if (e.target.files && e.target.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(ev) { userData.avatar = ev.target.result; saveUserData(); applyAvatar(); showToast("✅ تم تحديث الصورة"); };
+                reader.readAsDataURL(e.target.files[0]);
+            }
+        });
+        
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+            else document.exitFullscreen();
+        }
+        
+        // ============ Event Listeners ============
+        document.querySelectorAll(".nav-tab").forEach(tab => tab.addEventListener("click", () => {
+            document.querySelectorAll(".nav-tab").forEach(t => t.classList.remove("active"));
+            tab.classList.add("active");
+            currentPage = tab.dataset.page;
+            if (currentPage === "home") { currentCategory = "all"; document.querySelectorAll(".cat-btn").forEach(btn => { btn.classList.remove("active"); if (btn.dataset.cat === "all") btn.classList.add("active"); }); }
+            currentSearch = ""; searchInput.value = ""; filterMovies();
+        }));
+        
+        document.querySelectorAll(".cat-btn").forEach(btn => btn.addEventListener("click", () => {
+            if (currentPage !== "home") { currentPage = "home"; document.querySelectorAll(".nav-tab").forEach(t => t.classList.remove("active")); document.querySelector('.nav-tab[data-page="home"]').classList.add("active"); }
+            document.querySelectorAll(".cat-btn").forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            currentCategory = btn.dataset.cat;
+            filterMovies();
+        }));
+        
+        function performSearch() {
+            if (currentPage !== "home") { currentPage = "home"; document.querySelectorAll(".nav-tab").forEach(t => t.classList.remove("active")); document.querySelector('.nav-tab[data-page="home"]').classList.add("active"); currentCategory = "all"; document.querySelectorAll(".cat-btn").forEach(btn => { btn.classList.remove("active"); if (btn.dataset.cat === "all") btn.classList.add("active"); }); }
+            currentSearch = searchInput.value; filterMovies();
+        }
+        
+        searchBtn.addEventListener("click", performSearch);
+        searchInput.addEventListener("keypress", e => { if (e.key === "Enter") performSearch(); });
+        document.querySelector("#movieModal .close-modal").addEventListener("click", closeModalFunc);
+        window.addEventListener("click", e => { if (e.target === modal) closeModalFunc(); if (e.target === document.getElementById("downloadModal")) document.getElementById("downloadModal").style.display = "none"; if (e.target === document.getElementById("profileEditModal")) document.getElementById("profileEditModal").style.display = "none"; if (e.target === document.getElementById("authModal")) document.getElementById("authModal").style.display = "none"; });
+        document.getElementById("watchBtn")?.addEventListener("click", watchMovie);
+        document.getElementById("downloadBtn")?.addEventListener("click", showDownloadModal);
+        document.getElementById("trailerBtn")?.addEventListener("click", watchTrailer);
+        document.getElementById("favModalBtn")?.addEventListener("click", handleFavModal);
+        document.getElementById("copyLinkBtn")?.addEventListener("click", copyLink);
+        document.getElementById("closeDownloadModalBtn")?.addEventListener("click", () => document.getElementById("downloadModal").style.display = "none");
+        sliderPrev?.addEventListener("click", prevSlide);
+        sliderNext?.addEventListener("click", nextSlide);
+        document.getElementById("viewAllBtn")?.addEventListener("click", () => { currentCategory = "all"; document.querySelectorAll(".cat-btn").forEach(btn => { btn.classList.remove("active"); if (btn.dataset.cat === "all") btn.classList.add("active"); }); currentSearch = ""; searchInput.value = ""; filterMovies(); window.scrollTo({ top: 600, behavior: "smooth" }); });
+        document.getElementById("themeToggle")?.addEventListener("click", toggleTheme);
+        document.getElementById("fullscreenBtn")?.addEventListener("click", toggleFullscreen);
+        document.getElementById("scrollTop")?.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+        window.addEventListener("scroll", () => { document.getElementById("header").classList.toggle("scrolled", window.scrollY > 50); document.getElementById("scrollTop").classList.toggle("show", window.scrollY > 200); });
+        document.getElementById("logoRefresh")?.addEventListener("click", () => location.reload());
+        
+        // Auth
+        const authModalEl = document.getElementById("authModal");
+        document.getElementById("loginDropdownBtn")?.addEventListener("click", e => { e.preventDefault(); authModalEl.style.display = "flex"; });
+        document.getElementById("profileBtn")?.addEventListener("click", e => { e.preventDefault(); openProfileEdit(); });
+        document.getElementById("closeAuthModal")?.addEventListener("click", () => authModalEl.style.display = "none");
+        document.getElementById("loginTabBtn")?.addEventListener("click", () => { document.getElementById("loginForm").style.display = "block"; document.getElementById("registerForm").style.display = "none"; });
+        document.getElementById("registerTabBtn")?.addEventListener("click", () => { document.getElementById("loginForm").style.display = "none"; document.getElementById("registerForm").style.display = "block"; });
+        document.getElementById("doLoginBtn")?.addEventListener("click", () => { const username = document.getElementById("loginUsername").value; const password = document.getElementById("loginPassword").value; if (login(username, password)) authModalEl.style.display = "none"; });
+        document.getElementById("doRegisterBtn")?.addEventListener("click", () => { const username = document.getElementById("regUsername").value; const email = document.getElementById("regEmail").value; const password = document.getElementById("regPassword").value; const confirm = document.getElementById("regConfirmPassword").value; if (password !== confirm) showToast("كلمة المرور غير متطابقة", "error"); else if (register(username, email, password)) authModalEl.style.display = "none"; });
+        document.getElementById("logoutBtn")?.addEventListener("click", e => { e.preventDefault(); logout(); });
+        
+        // Profile Edit
+        document.getElementById("closeProfileEditModal")?.addEventListener("click", () => document.getElementById("profileEditModal").style.display = "none");
+        document.getElementById("saveProfileEditBtn")?.addEventListener("click", saveProfileEdit);
+        
+        // Settings
+        const settingsModalEl = document.getElementById("settingsModal");
+        document.getElementById("settingsBtn")?.addEventListener("click", e => { e.preventDefault(); settingsModalEl.style.display = "flex"; });
+        document.getElementById("closeSettingsModal")?.addEventListener("click", () => settingsModalEl.style.display = "none");
+        document.getElementById("darkModeToggle")?.addEventListener("change", (e) => setTheme(e.target.checked));
+        document.getElementById("exportDataBtn")?.addEventListener("click", () => { const data = JSON.stringify({ user: currentUser, data: userData }); const blob = new Blob([data], { type: "application/json" }); const url = URL.createObjectURL(blob); const a = document.createElement("a"); a.href = url; a.download = "cinema_data.json"; a.click(); URL.revokeObjectURL(url); showToast("تم تصدير البيانات"); });
+        document.getElementById("clearDataBtn")?.addEventListener("click", () => { if (confirm("سيتم مسح جميع البيانات!")) { localStorage.clear(); location.reload(); } });
+        
+        // Achievements
+        const achievementsModalEl = document.getElementById("achievementsModal");
+        document.getElementById("achievementsBtn")?.addEventListener("click", e => { e.preventDefault(); document.getElementById("achievementsGrid").innerHTML = achievementsList.map(ach => `<div class="achievement-card ${userData.achievements.includes(ach.id) ? '' : 'locked'}"><i class="fas ${ach.icon}"></i><h4>${ach.name}</h4><p>${ach.desc}</p></div>`).join(""); achievementsModalEl.style.display = "flex"; });
+        document.getElementById("closeAchievementsModal")?.addEventListener("click", () => achievementsModalEl.style.display = "none");
+        
+        // Particles
+        function initParticles() {
+            const container = document.getElementById("particleContainer");
+            for (let i = 0; i < 80; i++) {
+                const p = document.createElement("div");
+                p.classList.add("particle");
+                const size = Math.random() * 5 + 2;
+                p.style.width = `${size}px`;
+                p.style.height = `${size}px`;
+                p.style.left = `${Math.random() * 100}%`;
+                p.style.animationDuration = `${Math.random() * 12 + 8}s`;
+                p.style.animationDelay = `${Math.random() * 6}s`;
+                p.style.background = `radial-gradient(circle, ${document.body.classList.contains('dark-mode') ? 'rgba(229,9,20,0.8)' : 'rgba(255,215,0,0.6)'}, transparent)`;
+                container.appendChild(p);
+            }
+        }
+        
+        function initCanvas() {
+            const canvas = document.getElementById("canvasBg");
+            const ctx = canvas.getContext("2d");
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            let stars = [];
+            for (let i = 0; i < 100; i++) stars.push({ x: Math.random() * canvas.width, y: Math.random() * canvas.height, radius: Math.random() * 2, alpha: Math.random() * 0.5 });
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                stars.forEach(s => { ctx.beginPath(); ctx.arc(s.x, s.y, s.radius, 0, Math.PI * 2); ctx.fillStyle = `rgba(255, 255, 255, ${s.alpha})`; ctx.fill(); s.y += 0.2; if (s.y > canvas.height) s.y = 0; });
+                requestAnimationFrame(animate);
+            }
+            animate();
+            window.addEventListener("resize", () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
+        }
+        
+        const savedTheme = localStorage.getItem('cinema_theme') || 'dark';
+        setTheme(savedTheme === 'dark');
+        loadUserData();
+        createSlider();
+        initParticles();
+        initCanvas();
+        renderMovies();
+        if (featuredMovies.length) setInterval(nextSlide, 5000);
+        
+        console.log("%c🎬 سينما درايف ألترا ماكس | الإصدار 2.0 | تم إضافة سبونج بوب الهولندي الطائر 2025", "color: #e50914; font-size: 18px; font-weight: bold;");
+        console.log("%c📊 إحصائيات الزوار تعمل بكفاءة عالية", "color: #4caf50;");
+    </script>
+</body>
+</html>
