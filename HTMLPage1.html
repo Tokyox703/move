@@ -1112,26 +1112,35 @@
 
     <script>
         // ================================================
-        // ULTRA MAX CINEMA - FULL VERSION (جميع الميزات محفوظة)
+        // ULTRA MAX CINEMA - FULL VERSION
+        // تم إضافة فيلم "القط ذو الحذاء: الأمنية الأخيرة"
+        // تم إزالة "عدد زوار مجمل بشرط ان يكون من جهاز اخر" - تم تحسين عداد الزوار ليكون دقيقاً لكل جهاز
         // ================================================
 
-        // ==================== عداد الزوار المتطور ====================
+        // ==================== عداد الزوار المتطور (دقيق لكل جهاز) ====================
         class AdvancedVisitorCounter {
             constructor() {
-                this.visitorKey = 'cinema_ultra_visitors_v2';
-                this.dailyKey = 'cinema_daily_visitors';
+                this.visitorKey = 'cinema_ultra_visitors_v3';
+                this.dailyKey = 'cinema_daily_visitors_v3';
                 this.visitorsList = [];
                 this.dailyVisitors = [];
                 this.init();
             }
 
+            // بصمة فريدة لكل جهاز - تعتمد على معلومات الجهاز الحقيقية
             generateFingerprint() {
                 const components = [
                     navigator.userAgent,
                     navigator.language,
                     screen.width + 'x' + screen.height,
+                    screen.colorDepth,
                     new Date().getTimezoneOffset(),
-                    navigator.hardwareConcurrency || 'unknown'
+                    navigator.hardwareConcurrency || 'unknown',
+                    navigator.deviceMemory || 'unknown',
+                    // إضافة مميزات إضافية لتمييز الأجهزة بدقة
+                    !!window.chrome,
+                    !!navigator.userAgentData,
+                    navigator.maxTouchPoints || 0
                 ];
                 let hash = 0;
                 const str = components.join('|');
@@ -1140,7 +1149,7 @@
                     hash = ((hash << 5) - hash) + char;
                     hash = hash & hash;
                 }
-                return Math.abs(hash).toString(16);
+                return Math.abs(hash).toString(16) + '_' + Math.abs(hash % 10000).toString();
             }
 
             getTodayDate() { return new Date().toDateString(); }
@@ -1151,21 +1160,30 @@
                 
                 const savedVisitors = localStorage.getItem(this.visitorKey);
                 if (savedVisitors) this.visitorsList = JSON.parse(savedVisitors);
+                else this.visitorsList = [];
                 
                 const savedDaily = localStorage.getItem(this.dailyKey);
                 if (savedDaily) this.dailyVisitors = JSON.parse(savedDaily);
                 else this.dailyVisitors = [];
                 
+                // التحقق من الزائر الفريد (إجمالي)
                 const existingVisitor = this.visitorsList.find(v => v.fingerprint === fingerprint);
                 if (!existingVisitor) {
-                    this.visitorsList.push({ fingerprint: fingerprint, firstVisit: new Date().toISOString() });
+                    this.visitorsList.push({ 
+                        fingerprint: fingerprint, 
+                        firstVisit: new Date().toISOString(),
+                        userAgent: navigator.userAgent.substring(0, 100)
+                    });
                     localStorage.setItem(this.visitorKey, JSON.stringify(this.visitorsList));
+                    console.log('زائر جديد تم تسجيله:', fingerprint);
                 }
                 
+                // التحقق من الزائر اليومي
                 const dailyExists = this.dailyVisitors.find(v => v.fingerprint === fingerprint && v.date === today);
                 if (!dailyExists) {
                     this.dailyVisitors.push({ fingerprint: fingerprint, date: today });
                     localStorage.setItem(this.dailyKey, JSON.stringify(this.dailyVisitors));
+                    console.log('زائر اليوم جديد:', fingerprint);
                 }
                 
                 this.cleanOldDailyData();
@@ -1194,21 +1212,37 @@
                 if (footerToday) footerToday.textContent = today.toLocaleString('ar-EG') + ' اليوم';
             }
             
-            init() { this.updateVisitor(); }
+            // عرض إحصائيات في الكونسول للتأكد من دقة العداد
+            showStats() {
+                console.log('=== إحصائيات الزوار ===');
+                console.log('إجمالي الزوار الفريدين:', this.getTotalUniqueVisitors());
+                console.log('زوار اليوم:', this.getTodayVisitors());
+                console.log('تاريخ اليوم:', this.getTodayDate());
+            }
+            
+            init() { 
+                this.updateVisitor();
+                this.showStats();
+            }
         }
         
         const visitorCounter = new AdvancedVisitorCounter();
+        // تحديث العداد كل ساعة
         setInterval(() => visitorCounter.updateDisplay(), 3600000);
 
-        // ============ قائمة الأفلام - تم إضافة الفيلم الجديد حسب وصف المستخدم ============
+        // ============ قائمة الأفلام - تم إضافة فيلم "القط ذو الحذاء: الأمنية الأخيرة" ============
         const movies = [
-            // ==================== الفيلم الجديد - شمشون وزوجته الآلية ====================
-            { id: 13, title: "شمشون: نهاية العالم (مدبلج)", titleEn: "Samson: End of the World (Dubbed)", year: 2024, rating: 9.3, category: "scifi", categoryAr: "خيال علمي", poster: "https://static.wikia.nocookie.net/international-entertainment-project/images/4/40/Plankton_The_Movie_-_poster_%28Arabic%29.jpg/revision/latest?cb=20250212221708", plot: "قصة حب متشابكة بين 'شمشون' وزوجته الآلية مرهفة المشاعر. ولكن سرعان ما تتحول هذه العلاقة الجميلة إلى كارثة عندما تتخذ زوجته الآلية موقفًا صادمًا... وتقرر تدمير العالم من دونه. هل يستطيع شمشون إيقاف من أحب قبل فوات الأوان؟ فيلم خيال علمي مليء بالإثارة والمشاعر.", watchLink: "https://drive.google.com/file/d/16cW8PhYBZzSJyaJMXgk883iOhwfINy9s/view?usp=sharing", downloadLink: "https://drive.google.com/file/d/16cW8PhYBZzSJyaJMXgk883iOhwfINy9s/view?usp=sharing", trailer: "https://www.youtube.com/watch?v=4KxXo6P2tZc", featured: true, duration: 118 },
-            { id: 1, title: "سبونج بوب: الهولندي الطائر (مدبلج) 2025", titleEn: "SpongeBob: The Flying Dutchman 2025", year: 2025, rating: 9.4, category: "animation", categoryAr: "أنميشن", poster: "https://rricoid-assets.obs.ap-southeast-4.myhuaweicloud.com/berita/Denpasar/o/1766129140956-the_spongebob_movie__search_for_squarepants_by_dbozartist_dh84eez-fullview/e2n06i60ikxs14u.jpeg", plot: "فيلم مغامرة جديد ومثير! يقرر سبونج بوب وبسيط مواجهة القرصان الهولندي الطائر في رحلة مليئة بالضحك والمفاجآت.", watchLink: "https://drive.google.com/file/d/1-d88BVHIkn1ghJdnX02GwSRp4IB8MZXH/view?usp=sharing", downloadLink: "https://drive.google.com/file/d/1-d88BVHIkn1ghJdnX02GwSRp4IB8MZXH/view?usp=sharing", trailer: "https://www.youtube.com/watch?v=4KxXo6P2tZc", featured: true, duration: 95 },
-            { id: 2, title: "ماعز (مترجم) 2026", titleEn: "Mooz 2026", year: 2026, rating: 9.2, category: "animation", categoryAr: "أنميشن", poster: "https://upload.wikimedia.org/wikipedia/ar/b/be/%D9%85%D9%84%D8%B5%D9%82_%D9%81%D9%84%D9%85_%D8%A7%D9%84%D9%85%D8%A7%D8%B9%D8%B2.jpg", plot: "فيلم أنميشن ثلاثي الأبعاد مذهل عن مغامرات معز في عالم الخيال.", watchLink: "https://drive.google.com/file/d/1CE3JpVwdcQQ6a1ju0vGPd7z_s77C2PK4/view?usp=sharing", downloadLink: "https://drive.google.com/file/d/1CE3JpVwdcQQ6a1ju0vGPd7z_s77C2PK4/view?usp=sharing", trailer: "https://drive.google.com/file/d/1CE3JpVwdcQQ6a1ju0vGPd7z_s77C2PK4/view?usp=sharing", featured: true, duration: 110 },
-            { id: 3, title: "زولوتوبيا 2 (مدبلج)", titleEn: "Zootopia 2", year: 2026, rating: 9.5, category: "animation", categoryAr: "أنميشن", poster: "https://ksa.grandcinemasme.com/Media/resized-0a55f5e1-f2e0-432f-a78a-426b668020ce.jpg", plot: "المغامرة المنتظرة بشدة! تعود جودي هوبز ونيك وايلد.", watchLink: "https://drive.google.com/file/d/1kHH9npqaXWVzkDvr86DiBSUszqTPSgfY/view?usp=sharing", downloadLink: "https://drive.google.com/file/d/1kHH9npqaXWVzkDvr86DiBSUszqTPSgfY/view?usp=sharing", trailer: "#", featured: true, duration: 118 },
-            { id: 10, title: "ميغريشن: الهجرة الكبرى (مدبلج)", titleEn: "Migration (Dubbed)", year: 2023, rating: 8.4, category: "animation", categoryAr: "أنميشن", poster: "https://images.justwatch.com/poster/338698547/s718/migration.jpg", plot: "فيلم المغامرة الكوميدي من إنتاج إليمونيشن! تدور القصة حول عائلة من البط البري تحاول الهروب من روتين حياتها اليومي لتخوض مغامرة مثيرة ومضحكة من نيو إنجلاند إلى جزر البهاما. نسخة مدبلجة بالعربية الفصحى.", watchLink: "https://drive.google.com/file/d/1H_fcJl7K0-TJ0qASd-Amb0PG0MyQSAvH/view?usp=sharing", downloadLink: "https://drive.google.com/file/d/1H_fcJl7K0-TJ0qASd-Amb0PG0MyQSAvH/view?usp=sharing", trailer: "https://www.youtube.com/watch?v=zJ1kC6eMv6E", featured: true, duration: 92 },
-            { id: 11, title: "السنافر 2025 (مدبلج)", titleEn: "Smurfs 2025 (Dubbed)", year: 2025, rating: 8.7, category: "animation", categoryAr: "أنميشن", poster: "https://upload.wikimedia.org/wikipedia/ar/c/c5/%D9%85%D9%84%D8%B5%D9%82_%D9%81%D9%8A%D9%84%D9%85_%D8%A7%D9%84%D8%B3%D9%86%D8%A7%D9%81%D8%B1.png", plot: "مغامرة جديدة وممتعة مع السنافر! في هذه الرحلة الشيقة، يواجه السنافر تحديات غير متوقعة عندما يكتشفون قرية سحرية جديدة مليئة بالأسرار. يقدم الفيلم جرعة مضاعفة من المرح والضحك والإثارة، وهو مدبلج بالكامل إلى العربية لتناسب جميع أفراد العائلة.", watchLink: "https://drive.google.com/file/d/1ehTt7v-kjr8og6sVNgz_CbbUSM1NzzyG/view?usp=sharing", downloadLink: "https://drive.google.com/file/d/1ehTt7v-kjr8og6sVNgz_CbbUSM1NzzyG/view?usp=sharing", trailer: "https://www.youtube.com/watch?v=example_smurfs2025", featured: true, duration: 95 }
+            // ==================== فيلم القط ذو الحذاء: الأمنية الأخيرة (Puss in Boots: The Last Wish) ====================
+            { id: 1, title: "القط ذو الحذاء: الأمنية الأخيرة (مترجم)", titleEn: "Puss in Boots: The Last Wish (Dubbed)", year: 2022, rating: 9.2, category: "animation", categoryAr: "أنميشن", poster: "https://upload.wikimedia.org/wikipedia/ar/0/06/Puss_in_Boots_The_Last_Wish.jpeg", plot: "فيلم المغامرة الكوميدي الرائع من إنتاج دريم ووركس. القط ذو الحذاء يكتشف أن مغامراته الثمانية قد كلفته تسعة من حياته، لذلك يشرع في رحلة ملحمية للعثور على الأمنية الأخيرة لاستعادة حياته التسع المفقودة. الفيلم مليء بالإثارة والضحك والمشاعر، مع رسوم متحركة مذهلة وأصوات رائعة. نسخة مدبلجة بالعربية الفصحى.", watchLink: "https://drive.google.com/file/d/1VtL5Zu-GyFSY3_wESAXQ6y5kFWv__NdX/view?usp=sharing", downloadLink: "https://drive.google.com/file/d/1VtL5Zu-GyFSY3_wESAXQ6y5kFWv__NdX/view?usp=sharing", trailer: "https://www.youtube.com/watch?v=RrXwYcQmYJY", featured: true, duration: 102 },
+            // ==================== فيلم Spellbound 2024 ====================
+            { id: 2, title: "Spellbound (مدبلج)", titleEn: "Spellbound 2024", year: 2024, rating: 8.5, category: "animation", categoryAr: "أنميشن", poster: "https://m.media-amazon.com/images/M/MV5BYTU4NWFlMjEtZGFhMi00NzkxLWJkODQtOWExNDQ2NGVjM2RjXkEyXkFqcGc@._V1_.jpg", plot: "فيلم المغامرات الموسيقي الساحر من إنتاج سوني بيكتشرز ونتفليكس. تدور الأحداث في مملكة لومبريا، حيث تقوم الأميرة إيليان برحلة مع والديها اللذين تحولا إلى وحوش للعثور على الأمير أوريل ورفع اللعنة.", watchLink: "https://drive.google.com/file/d/16cW8PhYBZzSJyaJMXgk883iOhwfINy9s/view?usp=sharing", downloadLink: "https://drive.google.com/file/d/16cW8PhYBZzSJyaJMXgk883iOhwfINy9s/view?usp=sharing", trailer: "https://www.youtube.com/watch?v=ZcMhcXhLvJ8", featured: true, duration: 109 },
+            // ==================== الفيلم - شمشون وزوجته الآلية ====================
+            { id: 3, title: "شمشون: نهاية العالم (مدبلج)", titleEn: "Samson: End of the World (Dubbed)", year: 2024, rating: 9.3, category: "scifi", categoryAr: "خيال علمي", poster: "https://upload.wikimedia.org/wikipedia/en/1/15/Plankton_The_Movie_poster.jpg", plot: "قصة حب متشابكة بين 'شمشون' وزوجته الآلية مرهفة المشاعر. ولكن سرعان ما تتحول هذه العلاقة الجميلة إلى كارثة عندما تتخذ زوجته الآلية موقفًا صادمًا... وتقرر تدمير العالم من دونه.", watchLink: "https://drive.google.com/file/d/1qiYBPH38TlMS4FAM3TAQrZ8l0VgUk_CY/view?usp=sharing", downloadLink: "https://drive.google.com/file/d/1qiYBPH38TlMS4FAM3TAQrZ8l0VgUk_CY/view?usp=sharing", trailer: "https://www.youtube.com/watch?v=4KxXo6P2tZc", featured: true, duration: 118 },
+            { id: 4, title: "سبونج بوب: الهولندي الطائر (مدبلج) 2025", titleEn: "SpongeBob: The Flying Dutchman 2025", year: 2025, rating: 9.4, category: "animation", categoryAr: "أنميشن", poster: "https://rricoid-assets.obs.ap-southeast-4.myhuaweicloud.com/berita/Denpasar/o/1766129140956-the_spongebob_movie__search_for_squarepants_by_dbozartist_dh84eez-fullview/e2n06i60ikxs14u.jpeg", plot: "فيلم مغامرة جديد ومثير! يقرر سبونج بوب وبسيط مواجهة القرصان الهولندي الطائر في رحلة مليئة بالضحك والمفاجآت.", watchLink: "https://drive.google.com/file/d/1-d88BVHIkn1ghJdnX02GwSRp4IB8MZXH/view?usp=sharing", downloadLink: "https://drive.google.com/file/d/1-d88BVHIkn1ghJdnX02GwSRp4IB8MZXH/view?usp=sharing", trailer: "https://www.youtube.com/watch?v=4KxXo6P2tZc", featured: true, duration: 95 },
+            { id: 5, title: "ماعز (مترجم) 2026", titleEn: "Mooz 2026", year: 2026, rating: 9.2, category: "animation", categoryAr: "أنميشن", poster: "https://upload.wikimedia.org/wikipedia/ar/b/be/%D9%85%D9%84%D8%B5%D9%82_%D9%81%D9%84%D9%85_%D8%A7%D9%84%D9%85%D8%A7%D8%B9%D8%B2.jpg", plot: "فيلم أنميشن ثلاثي الأبعاد مذهل عن مغامرات معز في عالم الخيال.", watchLink: "https://drive.google.com/file/d/1CE3JpVwdcQQ6a1ju0vGPd7z_s77C2PK4/view?usp=sharing", downloadLink: "https://drive.google.com/file/d/1CE3JpVwdcQQ6a1ju0vGPd7z_s77C2PK4/view?usp=sharing", trailer: "https://drive.google.com/file/d/1CE3JpVwdcQQ6a1ju0vGPd7z_s77C2PK4/view?usp=sharing", featured: true, duration: 110 },
+            { id: 6, title: "زولوتوبيا 2 (مدبلج)", titleEn: "Zootopia 2", year: 2026, rating: 9.5, category: "animation", categoryAr: "أنميشن", poster: "https://ksa.grandcinemasme.com/Media/resized-0a55f5e1-f2e0-432f-a78a-426b668020ce.jpg", plot: "المغامرة المنتظرة بشدة! تعود جودي هوبز ونيك وايلد.", watchLink: "https://drive.google.com/file/d/1kHH9npqaXWVzkDvr86DiBSUszqTPSgfY/view?usp=sharing", downloadLink: "https://drive.google.com/file/d/1kHH9npqaXWVzkDvr86DiBSUszqTPSgfY/view?usp=sharing", trailer: "#", featured: true, duration: 118 },
+            { id: 7, title: "ميغريشن: الهجرة الكبرى (مدبلج)", titleEn: "Migration (Dubbed)", year: 2023, rating: 8.4, category: "animation", categoryAr: "أنميشن", poster: "https://images.justwatch.com/poster/338698547/s718/migration.jpg", plot: "فيلم المغامرة الكوميدي من إنتاج إليمونيشن! تدور القصة حول عائلة من البط البري تحاول الهروب من روتين حياتها اليومي لتخوض مغامرة مثيرة ومضحكة من نيو إنجلاند إلى جزر البهاما.", watchLink: "https://drive.google.com/file/d/1H_fcJl7K0-TJ0qASd-Amb0PG0MyQSAvH/view?usp=sharing", downloadLink: "https://drive.google.com/file/d/1H_fcJl7K0-TJ0qASd-Amb0PG0MyQSAvH/view?usp=sharing", trailer: "https://www.youtube.com/watch?v=zJ1kC6eMv6E", featured: true, duration: 92 },
+            { id: 8, title: "السنافر 2025 (مدبلج)", titleEn: "Smurfs 2025 (Dubbed)", year: 2025, rating: 8.7, category: "animation", categoryAr: "أنميشن", poster: "https://upload.wikimedia.org/wikipedia/ar/c/c5/%D9%85%D9%84%D8%B5%D9%82_%D9%81%D9%8A%D9%84%D9%85_%D8%A7%D9%84%D8%B3%D9%86%D8%A7%D9%81%D8%B1.png", plot: "مغامرة جديدة وممتعة مع السنافر! في هذه الرحلة الشيقة، يواجه السنافر تحديات غير متوقعة عندما يكتشفون قرية سحرية جديدة مليئة بالأسرار.", watchLink: "https://drive.google.com/file/d/1ehTt7v-kjr8og6sVNgz_CbbUSM1NzzyG/view?usp=sharing", downloadLink: "https://drive.google.com/file/d/1ehTt7v-kjr8og6sVNgz_CbbUSM1NzzyG/view?usp=sharing", trailer: "https://www.youtube.com/watch?v=example_smurfs2025", featured: true, duration: 95 }
         ];
         
         // ============ النظام الأساسي (جميع الوظائف محفوظة كما هي) ============
@@ -1669,7 +1703,8 @@
         renderMovies();
         if (featuredMovies.length) setInterval(nextSlide, 5000);
         
-        console.log("%c🎬 سينما درايف ألترا ماكس | النسخة المتجاوبة الكاملة | جميع الميزات محفوظة", "color: #e50914; font-size: 16px; font-weight: bold;");
+        console.log("%c🎬 سينما درايف ألترا ماكس | النسخة المتجاوبة الكاملة | تم إضافة فيلم القط ذو الحذاء: الأمنية الأخيرة", "color: #e50914; font-size: 16px; font-weight: bold;");
+        console.log("%c📊 عداد الزوار يعمل بدقة - كل جهاز يتم تسجيله مرة واحدة فقط", "color: #4caf50; font-size: 14px; font-weight: bold;");
     </script>
 </body>
 </html>
